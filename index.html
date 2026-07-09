@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV MAHKOTA BAROKAH ABADI</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome 6 (Gratis) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <style>
+        /* ===== RESET & VARIABLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #d4a843;
+            --gold-light: #f0d078;
+            --gold-dark: #b8922f;
+            --dark: #0d0b0a;
+            --dark-card: #1a1614;
+            --dark-surface: #25201c;
+            --cream: #faf6f0;
+            --text-light: #f0ebe5;
+            --text-muted: #a8998a;
+            --shadow-gold: 0 8px 40px rgba(212, 168, 67, 0.25);
+            --radius: 20px;
+            --transition: 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--dark);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gold-light);
+        }
+
+        /* ===== PARTICLES CANVAS ===== */
+        #particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ===== UTILITY ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 12px;
+            border: 1px solid rgba(212, 168, 67, 0.3);
+            padding: 6px 18px;
+            border-radius: 50px;
+            backdrop-filter: blur(4px);
+            background: rgba(212, 168, 67, 0.06);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.1;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .section-title .highlight {
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 580px;
+            line-height: 1.8;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--dark);
+            padding: 14px 36px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            box-shadow: 0 4px 24px rgba(212, 168, 67, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(212, 168, 67, 0.45);
+        }
+
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover::after {
+            opacity: 1;
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 32px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            border: 1.5px solid rgba(212, 168, 67, 0.4);
+            background: transparent;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--gold);
+            background: rgba(212, 168, 67, 0.08);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(212, 168, 67, 0.1);
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 18px 0;
+            z-index: 1000;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: rgba(13, 11, 10, 0.92);
+            backdrop-filter: blur(20px) saturate(1.4);
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(212, 168, 67, 0.08);
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            border-radius: 12px;
+            color: var(--dark);
+            font-size: 1.3rem;
+            box-shadow: 0 4px 16px rgba(212, 168, 67, 0.3);
+        }
+
+        .logo span {
+            background: linear-gradient(135deg, var(--gold-light), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: var(--dark) !important;
+            padding: 8px 22px;
+            border-radius: 60px;
+            font-weight: 700 !important;
+            font-size: 0.85rem !important;
+            transition: var(--transition);
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+        .nav-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(212, 168, 67, 0.35);
+            color: var(--dark) !important;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 26px;
+            height: 2.5px;
+            background: #fff;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 120px 0 80px;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -20%;
+            width: 70%;
+            height: 140%;
+            background: radial-gradient(ellipse at 70% 50%, rgba(212, 168, 67, 0.08), transparent 70%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(212, 168, 67, 0.10);
+            border: 1px solid rgba(212, 168, 67, 0.18);
+            padding: 8px 20px 8px 16px;
+            border-radius: 60px;
+            font-size: 0.8rem;
+            color: var(--gold-light);
+            font-weight: 500;
+            margin-bottom: 24px;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-content .badge i {
+            font-size: 0.7rem;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 6.5vw, 5rem);
+            font-weight: 800;
+            line-height: 1.05;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .hero-title .gold {
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-dark), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 200%;
+            animation: shimmerGold 4s ease-in-out infinite;
+        }
+
+        @keyframes shimmerGold {
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .hero-sub {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 480px;
+            line-height: 1.9;
+            margin-bottom: 36px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .hero-stats .stat-item {
+            text-align: left;
+        }
+
+        .hero-stats .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            display: block;
+            line-height: 1;
+        }
+
+        .hero-stats .stat-number .gold {
+            color: var(--gold);
+        }
+
+        .hero-stats .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* Hero Visual */
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-card {
+            background: var(--dark-card);
+            border: 1px solid rgba(212, 168, 67, 0.12);
+            border-radius: var(--radius);
+            padding: 40px 36px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 420px;
+            position: relative;
+            transition: var(--transition);
+            animation: floatCard 6s ease-in-out infinite;
+        }
+
+        @keyframes floatCard {
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: var(--radius);
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(212, 168, 67, 0.3), transparent, rgba(212, 168, 67, 0.15));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .hero-card .crown-icon {
+            font-size: 2.8rem;
+            color: var(--gold);
+            margin-bottom: 16px;
+            display: block;
+            animation: pulseCrown 3s ease-in-out infinite;
+        }
+
+        @keyframes pulseCrown {
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.08);
+                opacity: 0.8;
+            }
+        }
+
+        .hero-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .hero-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-card .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .hero-card .feature-list .item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .hero-card .feature-list .item i {
+            color: var(--gold);
+            font-size: 0.8rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* floating badges */
+        .float-badge {
+            position: absolute;
+            background: var(--dark-card);
+            border: 1px solid rgba(212, 168, 67, 0.15);
+            border-radius: 16px;
+            padding: 12px 18px;
+            backdrop-filter: blur(12px);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            animation: floatBadge 5s ease-in-out infinite;
+            z-index: 3;
+        }
+
+        .float-badge i {
+            color: var(--gold);
+            font-size: 1rem;
+        }
+
+        .float-badge:nth-child(2) {
+            top: 8%;
+            right: -8%;
+            animation-delay: 0.7s;
+        }
+
+        .float-badge:nth-child(3) {
+            bottom: 12%;
+            left: -10%;
+            animation-delay: 1.4s;
+        }
+
+        @keyframes floatBadge {
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        /* ===== SECTION COMMON ===== */
+        section {
+            padding: 100px 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header .section-desc {
+            margin: 0 auto;
+        }
+
+        /* ===== ABOUT ===== */
+        #about {
+            background: linear-gradient(180deg, var(--dark) 0%, var(--dark-card) 100%);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: var(--dark-surface);
+            border: 1px solid rgba(212, 168, 67, 0.08);
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 320px;
+        }
+
+        .about-image .placeholder-icon {
+            font-size: 5rem;
+            color: var(--gold);
+            opacity: 0.15;
+        }
+
+        .about-image .overlay-text {
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+            background: rgba(13, 11, 10, 0.8);
+            backdrop-filter: blur(8px);
+            padding: 12px 24px;
+            border-radius: 12px;
+            border-left: 3px solid var(--gold);
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .about-content .about-list {
+            list-style: none;
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .about-content .about-list li {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .about-content .about-list li i {
+            color: var(--gold);
+            font-size: 1.1rem;
+            width: 28px;
+            text-align: center;
+        }
+
+        /* ===== SERVICES ===== */
+        #services {
+            background: var(--dark);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--dark-card);
+            border: 1px solid rgba(212, 168, 67, 0.06);
+            border-radius: var(--radius);
+            padding: 36px 28px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212, 168, 67, 0.2);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card .icon-wrap {
+            width: 56px;
+            height: 56px;
+            background: rgba(212, 168, 67, 0.08);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: var(--gold);
+            margin-bottom: 18px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .icon-wrap {
+            background: rgba(212, 168, 67, 0.18);
+            transform: scale(1.05);
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ===== VISI MISI ===== */
+        #visi-misi {
+            background: var(--dark-card);
+        }
+
+        .vm-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .vm-card {
+            background: var(--dark);
+            border: 1px solid rgba(212, 168, 67, 0.06);
+            border-radius: var(--radius);
+            padding: 40px 32px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .vm-card:hover {
+            border-color: rgba(212, 168, 67, 0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .vm-card .vm-icon {
+            font-size: 2.4rem;
+            color: var(--gold);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .vm-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        .vm-card p {
+            color: var(--text-muted);
+            line-height: 1.9;
+            font-size: 1rem;
+        }
+
+        .vm-card ul {
+            list-style: none;
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .vm-card ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .vm-card ul li i {
+            color: var(--gold);
+            margin-top: 4px;
+            font-size: 0.8rem;
+        }
+
+        /* ===== CONTACT ===== */
+        #contact {
+            background: var(--dark);
+            position: relative;
+        }
+
+        #contact::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: radial-gradient(ellipse at 50% 100%, rgba(212, 168, 67, 0.04), transparent 70%);
+            pointer-events: none;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .contact-info p {
+            color: var(--text-muted);
+            line-height: 1.9;
+            margin-bottom: 32px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .contact-details .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .contact-details .detail-item i {
+            width: 40px;
+            height: 40px;
+            background: rgba(212, 168, 67, 0.08);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-form {
+            background: var(--dark-card);
+            border: 1px solid rgba(212, 168, 67, 0.06);
+            border-radius: var(--radius);
+            padding: 36px 32px;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 18px;
+        }
+
+        .contact-form label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--dark);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            outline: none;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212, 168, 67, 0.1);
+        }
+
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form .btn-primary {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark-card);
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 48px 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 12px;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            max-width: 300px;
+            line-height: 1.8;
+        }
+
+        .footer-col h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-col ul a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-col ul a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-bottom p {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-socials a {
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .footer-socials a:hover {
+            background: rgba(212, 168, 67, 0.12);
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        /* ===== SCROLL ANIMATIONS ===== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-scale {
+            opacity: 0;
+            transform: scale(0.92);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-scale.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content .hero-sub {
+                margin: 0 auto 36px;
+            }
+            .hero-actions {
+                justify-content: center;
+            }
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+            .hero-card {
+                max-width: 100%;
+            }
+
+            .about-grid,
+            .vm-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+
+            .float-badge {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: var(--dark-card);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 80px 32px 40px;
+                transition: var(--transition);
+                border-left: 1px solid rgba(212, 168, 67, 0.06);
+                gap: 20px;
+                align-items: flex-start;
+            }
+
+            .nav-links.open {
+                right: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 16px;
+                align-items: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-form {
+                padding: 24px 18px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .hero-card {
+                padding: 28px 20px;
+            }
+            .hero-card .crown-icon {
+                font-size: 2rem;
+            }
+            .btn-primary,
+            .btn-outline {
+                width: 100%;
+                justify-content: center;
+            }
+            .hero-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== PARTICLES CANVAS ===== -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <span class="logo-icon"><i class="fas fa-crown"></i></span>
+                <span>Mahkota</span> Barokah
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#visi-misi">Visi &amp; Misi</a></li>
+                <li><a href="#contact" class="nav-cta">Hubungi</a></li>
+            </ul>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <!-- Kiri: Konten -->
+                <div class="hero-content">
+                    <div class="badge">
+                        <i class="fas fa-star"></i> Perusahaan Terpercaya
+                    </div>
+                    <h1 class="hero-title">
+                        Mitra Andal <br />
+                        untuk <span class="gold">Kesuksesan</span> Anda
+                    </h1>
+                    <p class="hero-sub">
+                        CV Mahkota Barokah Abadi hadir sebagai solusi terbaik
+                        dalam bidang jasa konstruksi, perdagangan, dan logistik
+                        dengan komitmen penuh terhadap kualitas &amp; integritas.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i> Konsultasi Gratis
+                        </a>
+                        <a href="#about" class="btn-outline">
+                            <i class="fas fa-chevron-down"></i> Pelajari Lebih
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">15<span class="gold">+</span></span>
+                            <span class="stat-label">Tahun Pengalaman</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">120<span class="gold">+</span></span>
+                            <span class="stat-label">Proyek Selesai</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">98<span class="gold">%</span></span>
+                            <span class="stat-label">Kepuasan Klien</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kanan: Visual Card -->
+                <div class="hero-visual">
+                    <div class="hero-card">
+                        <span class="crown-icon"><i class="fas fa-crown"></i></span>
+                        <h3>CV Mahkota Barokah Abadi</h3>
+                        <p>Solusi konstruksi &amp; logistik terintegrasi untuk masa depan yang lebih baik.</p>
+                        <div class="feature-list">
+                            <div class="item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Berkualitas &amp; Tepat Waktu</span>
+                            </div>
+                            <div class="item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Tim Profesional &amp; Berpengalaman</span>
+                            </div>
+                            <div class="item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Komitmen pada Kepuasan Klien</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating badges -->
+                    <div class="float-badge" style="top:8%; right:-8%;">
+                        <i class="fas fa-trophy"></i> Terbaik 2025
+                    </div>
+                    <div class="float-badge" style="bottom:12%; left:-10%;">
+                        <i class="fas fa-shield-alt"></i> Terpercaya
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image reveal-left">
+                    <div class="placeholder-icon"><i class="fas fa-building"></i></div>
+                    <div class="overlay-text">
+                        <i class="fas fa-crown" style="color:var(--gold);margin-right:8px;"></i>
+                        Sejak 2010
+                    </div>
+                </div>
+                <div class="about-content reveal-right">
+                    <span class="section-label"><i class="fas fa-info-circle"></i> Tentang Kami</span>
+                    <h2 class="section-title">
+                        Membangun <span class="highlight">Masa Depan</span> dengan Integritas
+                    </h2>
+                    <p style="color:var(--text-muted);line-height:1.9;font-size:1rem;">
+                        CV Mahkota Barokah Abadi adalah perusahaan yang bergerak di bidang
+                        jasa konstruksi, perdagangan umum, dan logistik. Didirikan dengan
+                        semangat untuk memberikan pelayanan terbaik, kami mengutamakan
+                        kualitas, kepercayaan, dan kepuasan klien sebagai pilar utama.
+                    </p>
+                    <ul class="about-list">
+                        <li><i class="fas fa-check"></i> Tenaga ahli bersertifikasi</li>
+                        <li><i class="fas fa-check"></i> Material berkualitas tinggi</li>
+                        <li><i class="fas fa-check"></i> Manajemen proyek terstruktur</li>
+                        <li><i class="fas fa-check"></i> Harga kompetitif &amp; transparan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label"><i class="fas fa-briefcase"></i> Layanan</span>
+                <h2 class="section-title">
+                    Keahlian <span class="highlight">Kami</span>
+                </h2>
+                <p class="section-desc">
+                    Kami menyediakan berbagai layanan profesional untuk memenuhi
+                    kebutuhan bisnis dan proyek Anda.
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal" style="transition-delay:0.1s;">
+                    <div class="icon-wrap"><i class="fas fa-hard-hat"></i></div>
+                    <h3>Konstruksi</h3>
+                    <p>Pembangunan gedung, infrastruktur, dan renovasi dengan standar kualitas tinggi dan tepat waktu.</p>
+                </div>
+                <div class="service-card reveal" style="transition-delay:0.2s;">
+                    <div class="icon-wrap"><i class="fas fa-truck"></i></div>
+                    <h3>Logistik</h3>
+                    <p>Manajemen rantai pasok, distribusi barang, dan solusi logistik yang efisien dan terpercaya.</p>
+                </div>
+                <div class="service-card reveal" style="transition-delay:0.3s;">
+                    <div class="icon-wrap"><i class="fas fa-handshake"></i></div>
+                    <h3>Perdagangan</h3>
+                    <p>Perdagangan umum barang dan material dengan jaringan pemasok yang luas dan terverifikasi.</p>
+                </div>
+                <div class="service-card reveal" style="transition-delay:0.4s;">
+                    <div class="icon-wrap"><i class="fas fa-chart-line"></i></div>
+                    <h3>Konsultasi</h3>
+                    <p>Pendampingan profesional mulai dari perencanaan, analisis biaya, hingga eksekusi proyek.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== VISI MISI ===== -->
+    <section id="visi-misi">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label"><i class="fas fa-bullseye"></i> Visi &amp; Misi</span>
+                <h2 class="section-title">
+                    Tujuan <span class="highlight">Kami</span>
+                </h2>
+                <p class="section-desc">
+                    Menjadi perusahaan terkemuka yang memberikan dampak positif
+                    bagi klien, mitra, dan masyarakat.
+                </p>
+            </div>
+            <div class="vm-grid">
+                <div class="vm-card reveal-left">
+                    <span class="vm-icon"><i class="fas fa-eye"></i></span>
+                    <h3>Visi</h3>
+                    <p>
+                        Menjadi perusahaan jasa konstruksi, logistik, dan perdagangan
+                        yang terpercaya dan terkemuka di Indonesia, dengan mengutamakan
+                        kualitas, inovasi, dan kepuasan pelanggan.
+                    </p>
+                </div>
+                <div class="vm-card reveal-right">
+                    <span class="vm-icon"><i class="fas fa-flag-checkered"></i></span>
+                    <h3>Misi</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-chevron-right"></i>
+                            Memberikan layanan terbaik dengan standar mutu tinggi.
+                        </li>
+                        <li>
+                            <i class="fas fa-chevron-right"></i>
+                            Mengembangkan sumber daya manusia yang kompeten dan profesional.
+                        </li>
+                        <li>
+                            <i class="fas fa-chevron-right"></i>
+                            Menjalin kemitraan yang saling menguntungkan dengan semua pemangku kepentingan.
+                        </li>
+                        <li>
+                            <i class="fas fa-chevron-right"></i>
+                            Berkontribusi pada pembangunan infrastruktur yang berkelanjutan.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label"><i class="fas fa-envelope"></i> Hubungi Kami</span>
+                <h2 class="section-title">
+                    Mari <span class="highlight">Bekerja Sama</span>
+                </h2>
+                <p class="section-desc">
+                    Kami siap membantu Anda. Hubungi kami untuk konsultasi atau
+                    informasi lebih lanjut.
+                </p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info reveal-left">
+                    <h3>CV Mahkota Barokah Abadi</h3>
+                    <p>
+                        Dengan pengalaman lebih dari 15 tahun, kami berkomitmen
+                        memberikan solusi terbaik untuk setiap proyek Anda.
+                    </p>
+                    <div class="contact-details">
+                        <div class="detail-item">
+                            <i class="fas fa-map-pin"></i>
+                            <span>Jl. Raya No. 123, Jakarta, Indonesia</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+62 812 3456 7890</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@mahkotabarokah.com</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Senin – Jumat, 08.00 – 17.00 WIB</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form reveal-right">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" placeholder="Nama Anda" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="email@anda.com" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan</label>
+                            <textarea id="message" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i> Kirim Pesan
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-icon"><i class="fas fa-crown"></i></span>
+                        <span>Mahkota</span> Barokah
+                    </a>
+                    <p>
+                        Mitra terpercaya untuk solusi konstruksi, logistik, dan
+                        perdagangan yang berkualitas.
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Perusahaan</h4>
+                    <ul>
+                        <li><a href="#about">Tentang</a></li>
+                        <li><a href="#services">Layanan</a></li>
+                        <li><a href="#visi-misi">Visi &amp; Misi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="#services">Konstruksi</a></li>
+                        <li><a href="#services">Logistik</a></li>
+                        <li><a href="#services">Perdagangan</a></li>
+                        <li><a href="#services">Konsultasi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontak</h4>
+                    <ul>
+                        <li><a href="tel:+6281234567890">+62 812 3456 7890</a></li>
+                        <li><a href="mailto:info@mahkotabarokah.com">info@mahkotabarokah.com</a></li>
+                        <li><a href="#">Jakarta, Indonesia</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CV Mahkota Barokah Abadi. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // ============================
+        // 1. PARTICLES (ringan & elegan)
+        // ============================
+        (function initParticles() {
+            const canvas = document.getElementById('particles-canvas');
+            const ctx = canvas.getContext('2d');
+            let w, h;
+            const particles = [];
+            const COUNT = 50;
+
+            function resize() {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            class Particle {
+                constructor() {
+                    this.reset();
+                }
+                reset() {
+                    this.x = Math.random() * w;
+                    this.y = Math.random() * h;
+                    this.size = Math.random() * 2.5 + 1;
+                    this.speedX = (Math.random() - 0.5) * 0.25;
+                    this.speedY = (Math.random() - 0.5) * 0.25;
+                    this.opacity = Math.random() * 0.4 + 0.1;
+                }
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    if (this.x < 0 || this.x > w || this.y < 0 || this.y > h) {
+                        this.reset();
+                    }
+                }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(212, 168, 67, ${this.opacity})`;
+                    ctx.fill();
+                }
+            }
+
+            for (let i = 0; i < COUNT; i++) {
+                particles.push(new Particle());
+            }
+
+            function drawLines() {
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < 150) {
+                            const alpha = 0.12 * (1 - dist / 150);
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(212, 168, 67, ${alpha})`;
+                            ctx.lineWidth = 0.6;
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, w, h);
+                for (const p of particles) {
+                    p.update();
+                    p.draw();
+                }
+                drawLines();
+                requestAnimationFrame(animate);
+            }
+            animate();
+        })();
+
+        // ============================
+        // 2. NAVBAR SCROLL
+        // ============================
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const current = window.scrollY;
+            if (current > 60) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            lastScroll = current;
+        });
+
+        // ============================
+        // 3. HAMBURGER MENU
+        // ============================
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('open');
+        });
+
+        // Tutup menu saat link diklik
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('open');
+            });
+        });
+
+        // ============================
+        // 4. SCROLL REVEAL (Intersection Observer)
+        // ============================
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.12,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        revealElements.forEach(el => observer.observe(el));
+
+        // ============================
+        // 5. CONTACT FORM
+        // ============================
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !message) {
+                alert('Harap isi semua bidang!');
+                return;
+            }
+
+            // Simulasi sukses
+            const btn = form.querySelector('.btn-primary');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Terkirim!';
+                btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = '';
+                    btn.disabled = false;
+                    form.reset();
+                }, 2200);
+            }, 1400);
+        });
+
+        // ============================
+        // 6. SMOOTH ANCHOR SCROLL (opsional)
+        // ============================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    const offsetTop = target.getBoundingClientRect().top + window.pageYOffset - 80;
+                    window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+                }
+            });
+        });
+
+        console.log('✨ CV Mahkota Barokah Abadi — Landing Page siap!');
+    </script>
+
+</body>
+</html>
